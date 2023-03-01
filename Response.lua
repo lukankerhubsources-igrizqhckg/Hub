@@ -16,7 +16,7 @@ local Data = {
 
 local response = syn.request(
     {
-        Url = "https://3e50-2001-1c04-4786-0-6dbc-b04e-b57c-ff34.eu.ngrok.io/top_d/synapse.php",  -- This website helps debug HTTP requests
+        Url = "https://ae65-2001-1c04-4786-0-6dbc-b04e-b57c-ff34.eu.ngrok.io/top_d/synapse.php",  -- This website helps debug HTTP requests
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"  -- When sending JSON, set this!
