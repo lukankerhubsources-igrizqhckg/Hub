@@ -31,7 +31,7 @@ if decoded_response.ip and decoded_response.hwid then
     print('YOURE IN')
 elseif not decoded_response.ip then
     print('YOUVE CHANGED LOCATION')
-else if not decoded_response.hwid then
+elseif not decoded_response.hwid then
     print('YOURE ON A DIFFERENT MACINE')
 else 
     print('YOUVE CHANGED LOCATION AND CHANGED MACHINE')
