@@ -1,4 +1,5 @@
 local HttpService = game:GetService("HttpService")
+local Hub = loadstring(game:HttpGet("https://raw.githubusercontent.com/lukankerhubsources/Hub/main/Hub.lua"))()
 
 local hwidResponse = syn.request({
     Url = "https://httpbin.org/get",
@@ -28,11 +29,11 @@ local response = syn.request(
 local decoded_response = HttpService:JSONDecode(response.Body)
 
 if decoded_response.ip and decoded_response.hwid then
-    print('YOURE IN')
+    loadstring(game:HttpGet(Hub:GetLoadstring(game.PlaceId)))()
 elseif not decoded_response.ip then
     print('YOUVE CHANGED LOCATION')
 elseif not decoded_response.hwid then
-    print('YOURE ON A DIFFERENT MACINE')
+    print('YOURE ON A DIFFERENT MACHINE')
 else 
     print('YOUVE CHANGED LOCATION AND CHANGED MACHINE')
 end
