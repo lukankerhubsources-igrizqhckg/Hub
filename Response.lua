@@ -28,7 +28,7 @@ local response = syn.request(
 local decoded_response = HttpService:JSONDecode(response.Body)
 
 if decoded_response.ip and decoded_response.hwid then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/lukanker/Treasure-Hunt-Sim/main/Treasure%20Hunt%20Sim.lua"))()
+    print('YOURE IN')
 elseif not decoded_response.ip then
     print('YOUVE CHANGED LOCATION')
 else if not decoded_response.hwid then
