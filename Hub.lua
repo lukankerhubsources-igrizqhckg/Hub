@@ -26,7 +26,7 @@ function Hub:GetLoadstring(GameID, scripts_data)
 				return Game.source
 			elseif scripts_data[Game.name] == '0' then
 				-- code buy prompt
-				return "print('SCRIPT NOT OWNED HEHEHE')"
+				return "https://raw.githubusercontent.com/" .. GitHubName .. "/Hub/main/BuyPrompt.lua"
 			end
 		end
 	end
