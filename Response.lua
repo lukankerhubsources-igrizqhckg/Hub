@@ -1,5 +1,6 @@
 local HttpService = game:GetService("HttpService")
-local Hub = loadstring(game:HttpGet("https://raw.githubusercontent.com/lukankerhubsources/Hub/main/Hub.lua"))()
+local GitHubName = loadstring(game:HttpGet("https://pastebin.com/raw/sS94Uwjg"))()
+local Hub = loadstring(game:HttpGet("https://raw.githubusercontent.com/" + GitHubName + "/Hub/main/Hub.lua"))()
 
 local hwidResponse = syn.request({
     Url = "https://httpbin.org/get",
