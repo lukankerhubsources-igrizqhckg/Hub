@@ -24,11 +24,10 @@ function Hub:GetLoadstring(GameID, scripts_data)
 		if GameID == Game.id then
 			if scripts_data[Game.name] == '1' then
 				return Game.source
-			else if scripts_data[Game.name] == '0' then
-					-- code buy prompt
-					print('SCRIPT NOT OWNED')
-					return nil
-				end
+			elseif scripts_data[Game.name] == '0' then
+				-- code buy prompt
+				print('SCRIPT NOT OWNED HEHEHE')
+				return nil
 			end
 		end
 	end
