@@ -28,12 +28,15 @@ local response = syn.request(
 )
 
 local decoded_response = HttpService:JSONDecode(response.Body)
+local user_data = decoded_response.user_data
+local scripts_data = decoded_response.scripts_data
 
-if decoded_response.ip and decoded_response.hwid then
-    loadstring(game:HttpGet(Hub:GetLoadstring(game.PlaceId)))()
-elseif not decoded_response.ip and decoded_response.hwid then
+if user_data.ip and user_data.hwid then
+    local source = Hub:GetLoadstring(game.PlaceId, scripts_data)
+    loadstring(game:HttpGet(source))()
+elseif not user_data.ip and user_data.hwid then
     print('YOUVE CHANGED LOCATION')
-elseif not decoded_response.hwid and decoded_response.ip then
+elseif not user_data.hwid and user_data.ip then
     print('YOURE ON A DIFFERENT MACHINE')
 else 
     print('YOUVE CHANGED LOCATION AND CHANGED MACHINE')
