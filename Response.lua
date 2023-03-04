@@ -20,3 +20,5 @@ local source = syn.request(
 
 source.Body = 'https://raw.githubusercontent.com/' .. GitHubName .. source.Body
 loadstring(game:HttpGet(source.Body))()
+
+-- RATIO FILTHY BLACK NIGGER
