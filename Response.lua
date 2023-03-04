@@ -13,7 +13,9 @@ local keyResponse = syn.request(
     }
 )
 
-local user = keyResponse.Body:split('/')[2]
+local user = keyResponse.Body
+
+print(user)
 
 local hwidResponse = syn.request({
     Url = "https://httpbin.org/get",
