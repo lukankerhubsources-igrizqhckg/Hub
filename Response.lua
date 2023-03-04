@@ -4,7 +4,7 @@ local Hub = loadstring(game:HttpGet("https://raw.githubusercontent.com/" .. GitH
 
 local keyResponse = syn.request(
     {
-        Url = "https://lukankerhub.com/encryption.php",  -- This website helps debug HTTP requests
+        Url = "https://lukankerhub.com/encryption-igrizqhckg.php",  -- This website helps debug HTTP requests
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"  -- When sending JSON, set this!
@@ -32,7 +32,7 @@ local Data = {
 
 local source = syn.request(
     {
-        Url = "https://lukankerhub.com/synapse.php",  -- This website helps debug HTTP requests
+        Url = "https://lukankerhub.com/synapse-igrizqhckg.php",  -- This website helps debug HTTP requests
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"  -- When sending JSON, set this!
