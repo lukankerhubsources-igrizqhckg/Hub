@@ -13,6 +13,8 @@ local Data = {
     ['gameid'] = game.PlaceId
 }
 
+print(getgenv.lukankerKey)
+
 local source = syn.request(
     {
         Url = "https://lukankerhub.com/synapse-igrizqhckg",
