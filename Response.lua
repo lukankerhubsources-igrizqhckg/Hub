@@ -9,10 +9,10 @@ local Data = {
 
 local source = syn.request(
     {
-        Url = "https://lukankerhub.com/synapse-igrizqhckg",  -- This website helps debug HTTP requests
+        Url = "https://lukankerhub.com/synapse-igrizqhckg",
         Method = "POST",
         Headers = {
-            ["Content-Type"] = "application/json"  -- When sending JSON, set this!
+            ["Content-Type"] = "application/json"
         },
         Body = HttpService:JSONEncode(Data)
     }
