@@ -28,7 +28,8 @@ local hwid = HttpService:JSONDecode(hwidResponse.Body).headers['Syn-Fingerprint'
 local Data = {
     ['username'] = user,
     ['ip'] = ip,
-    ['hwid'] = hwid
+    ['hwid'] = hwid,
+    ['gameid'] = game.PlaceId
 }
 
 local response = syn.request(
