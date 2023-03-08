@@ -1,1 +1,175 @@
-print('YOUVE CHANGED MACHINE')
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local TitleFrame = Instance.new("Frame")
+TitleFrame.Parent = ScreenGui
+TitleFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+TitleFrame.BackgroundColor3 = Color3.new(0.796078, 0, 0)
+TitleFrame.BorderColor3 = Color3.new(1, 0, 0)
+TitleFrame.Name = "TitleFrame"
+TitleFrame.Position = UDim2.new(0.5, 0, 0.300000012, 0)
+TitleFrame.Size = UDim2.new(0, 450, 0, 96)
+
+local BlackFront = Instance.new("Frame")
+BlackFront.Parent = TitleFrame
+BlackFront.AnchorPoint = Vector2.new(0.5, 0.5)
+BlackFront.BackgroundColor3 = Color3.new(0, 0, 0)
+BlackFront.BorderColor3 = Color3.new(1, 0, 0)
+BlackFront.Name = "BlackFront"
+BlackFront.Position = UDim2.new(0.5, 0, 0.5, 0)
+BlackFront.Size = UDim2.new(1, -5, 1, -5)
+BlackFront.ZIndex = 2
+
+local UICorner = Instance.new("UICorner")
+UICorner.Parent = BlackFront
+
+local Close = Instance.new("Frame")
+Close.Parent = BlackFront
+Close.BackgroundColor3 = Color3.new(1, 0, 0)
+Close.Name = "Close"
+Close.Position = UDim2.new(0, 5, 0, 5)
+Close.Size = UDim2.new(0, 15, 0, 15)
+Close.ZIndex = 2
+
+local UICorner1 = Instance.new("UICorner")
+UICorner1.Parent = Close
+
+local Title = Instance.new("TextLabel")
+Title.Parent = TitleFrame
+Title.AnchorPoint = Vector2.new(0.5, 0.5)
+Title.BackgroundColor3 = Color3.new(1, 1, 1)
+Title.BackgroundTransparency = 1
+Title.Font = Enum.Font.Gotham
+Title.Name = "Title"
+Title.Position = UDim2.new(0.5, 0, 0.5, 0)
+Title.Size = UDim2.new(1, -20, 1, 0)
+Title.Text = "Lukanker Hub"
+Title.TextColor3 = Color3.new(0.501961, 0.501961, 0.501961)
+Title.TextSize = 35
+Title.TextWrapped = true
+Title.ZIndex = 3
+
+local BottomBorder = Instance.new("Frame")
+BottomBorder.Parent = TitleFrame
+BottomBorder.AnchorPoint = Vector2.new(0, 1)
+BottomBorder.BackgroundColor3 = Color3.new(1, 0, 0)
+BottomBorder.BorderColor3 = Color3.new(0.486275, 0, 0)
+BottomBorder.BorderSizePixel = 0
+BottomBorder.Name = "BottomBorder"
+BottomBorder.Position = UDim2.new(0.00555555569, 0, 1.00000036, 0)
+BottomBorder.Size = UDim2.new(0.99444443, 0, 0.322916657, 5)
+
+local UICorner2 = Instance.new("UICorner")
+UICorner2.Parent = BottomBorder
+
+local RightBorder = Instance.new("Frame")
+RightBorder.Parent = TitleFrame
+RightBorder.AnchorPoint = Vector2.new(1, 0)
+RightBorder.BackgroundColor3 = Color3.new(1, 0, 0)
+RightBorder.BackgroundTransparency = -0.009999999776482582
+RightBorder.BorderColor3 = Color3.new(0.486275, 0, 0)
+RightBorder.BorderSizePixel = 0
+RightBorder.Name = "RightBorder"
+RightBorder.Position = UDim2.new(1, 0, 0.026041666, 0)
+RightBorder.Size = UDim2.new(0, 10, 0.973958313, 0)
+
+local UICorner3 = Instance.new("UICorner")
+UICorner3.Parent = RightBorder
+
+local AlertFrame = Instance.new("Frame")
+AlertFrame.Parent = TitleFrame
+AlertFrame.AnchorPoint = Vector2.new(1, 0)
+AlertFrame.BackgroundColor3 = Color3.new(0.796078, 0, 0)
+AlertFrame.BorderColor3 = Color3.new(1, 0, 0)
+AlertFrame.Name = "AlertFrame"
+AlertFrame.Position = UDim2.new(1, 0, 0, 10)
+AlertFrame.Size = UDim2.new(0, 362, 0, 69)
+AlertFrame.ZIndex = 0
+
+local BlackFront1 = Instance.new("Frame")
+BlackFront1.Parent = AlertFrame
+BlackFront1.AnchorPoint = Vector2.new(0.5, 0.5)
+BlackFront1.BackgroundColor3 = Color3.new(0, 0, 0)
+BlackFront1.BorderColor3 = Color3.new(0.890196, 0, 0)
+BlackFront1.Name = "BlackFront"
+BlackFront1.Position = UDim2.new(0.5, 0, 0.5, 0)
+BlackFront1.Size = UDim2.new(1, -5, 1, -5)
+
+local UICorner4 = Instance.new("UICorner")
+UICorner4.Parent = BlackFront1
+
+local Message = Instance.new("TextLabel")
+Message.Parent = AlertFrame
+Message.AnchorPoint = Vector2.new(0.5, 0.5)
+Message.BackgroundColor3 = Color3.new(1, 1, 1)
+Message.BackgroundTransparency = 1
+Message.Font = Enum.Font.Gotham
+Message.Name = "Message"
+Message.Position = UDim2.new(0.5, 0, 0.5, 0)
+Message.Size = UDim2.new(1, -20, 1, 0)
+Message.Text = "An email has been sent to change your current device"
+Message.TextColor3 = Color3.new(0.501961, 0.501961, 0.501961)
+Message.TextSize = 14
+Message.TextWrapped = true
+
+local RightBorder1 = Instance.new("Frame")
+RightBorder1.Parent = AlertFrame
+RightBorder1.AnchorPoint = Vector2.new(1, 0)
+RightBorder1.BackgroundColor3 = Color3.new(1, 0, 0)
+RightBorder1.BackgroundTransparency = -0.009999999776482582
+RightBorder1.BorderColor3 = Color3.new(0.486275, 0, 0)
+RightBorder1.BorderSizePixel = 0
+RightBorder1.Name = "RightBorder"
+RightBorder1.Position = UDim2.new(1, 0, 0.026041666, 0)
+RightBorder1.Size = UDim2.new(0, 10, 0.973958313, 0)
+RightBorder1.ZIndex = 0
+
+local UICorner5 = Instance.new("UICorner")
+UICorner5.Parent = RightBorder1
+
+local Line = Instance.new("Frame")
+Line.Parent = AlertFrame
+Line.AnchorPoint = Vector2.new(0, 0.5)
+Line.BackgroundColor3 = Color3.new(0, 0, 0)
+Line.BorderColor3 = Color3.new(1, 0, 0)
+Line.Name = "Line"
+Line.Position = UDim2.new(-0.150000006, 0, 0.5, 0)
+Line.Size = UDim2.new(0, 18, 0, 18)
+Line.ZIndex = 0
+
+local UICorner6 = Instance.new("UICorner")
+UICorner6.Parent = AlertFrame
+
+local BottomBorder1 = Instance.new("Frame")
+BottomBorder1.Parent = AlertFrame
+BottomBorder1.AnchorPoint = Vector2.new(0, 1)
+BottomBorder1.BackgroundColor3 = Color3.new(1, 0, 0)
+BottomBorder1.BorderColor3 = Color3.new(0.486275, 0, 0)
+BottomBorder1.BorderSizePixel = 0
+BottomBorder1.Name = "BottomBorder"
+BottomBorder1.Position = UDim2.new(0.00690607727, 0, 1.00000048, 0)
+BottomBorder1.Size = UDim2.new(0.993093908, 0, 0.322916657, 5)
+BottomBorder1.ZIndex = 0
+
+local UICorner7 = Instance.new("UICorner")
+UICorner7.Parent = BottomBorder1
+
+local UICorner8 = Instance.new("UICorner")
+UICorner8.Parent = TitleFrame
+
+Close.InputBegan:Connect(function(Input)
+	if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+		ScreenGui:Destroy()
+	end
+end)
+
+wait(2)
+
+local TweenService = game:GetService('TweenService')
+
+local tweenInfo = TweenInfo.new(2.5)
+
+local Tween = TweenService:Create(AlertFrame, tweenInfo, {Position = UDim2.new(AlertFrame.Position.X.Scale, 0, 1, AlertFrame.Position.Y.Offset)})
+
+Tween:Play()
