@@ -7,8 +7,6 @@ local hwidResponse = syn.request({
     Method = "GET"
 })
 
-print(getgenv().lukankerKey)
-
 local Data = {
     ['key'] = getgenv().lukankerKey,
     ['hwid'] = HttpService:JSONDecode(hwidResponse.Body).headers['Syn-Fingerprint'],
