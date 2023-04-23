@@ -211,23 +211,17 @@ function ESP:CreateCategory(Parent, Properties)
 	return Category
 end
 
-local Category = ESP:CreateCategory(game:GetService("Workspace").NPCS, {
-	Name = 'NPCS',
-	Color = Color3.new(255, 0, 0),
-	Distance = 1000,
-	PrimaryPart = 'HumanoidRootPart',
-	Enabled = true,
-	Names = true,
-	Boxes = false,
-	Tracers = false,
-	Distances = false,
-})
-
-UIS.InputBegan:Connect(function(Input)
-	if Input.KeyCode == Enum.KeyCode.Q then
-		Category:Toggle()
-	end
-end)
+--local Category = ESP:CreateCategory(game:GetService("Workspace").NPCS, {
+--	Name = 'NPCS',
+--	Color = Color3.new(255, 0, 0),
+--	Distance = 1000,
+--	PrimaryPart = 'HumanoidRootPart',
+--	Enabled = true,
+--	Names = true,
+--	Boxes = false,
+--	Tracers = false,
+--	Distances = false,
+--})
 
 RunService.RenderStepped:Connect(function()
 	for i, Category in pairs(ESP.Categories) do
@@ -241,3 +235,5 @@ RunService.RenderStepped:Connect(function()
 		end
 	end
 end)
+
+return ESP
