@@ -66,7 +66,11 @@ function ESP:CreateCategory(Parent, Properties)
 	local Category = setmetatable({
 		Objects = {},
 		Color = Properties.Color,
-		Enabled = Properties.Enabled
+		Enabled = Properties.Enabled,
+		Names = Properties.Names,
+		Boxes = Properties.Boxes,
+		Tracers = Properties.Boxes,
+		Distances = Properties.Distances
 	}, {})
 
 	function Category:CreateObject(Instance)
@@ -122,11 +126,11 @@ function ESP:CreateCategory(Parent, Properties)
 			local Camera = GetCamera()
 			local CF = Object.PrimaryPart.CFrame
 			
-			if Category.Enabled and Properties.Distance >= (Camera.CFrame.Position - CF.Position).Magnitude then
+			if Category.Enabled and Properties.Distance <= (Camera.CFrame.Position - CF.Position).Magnitude then
 				local ScreenPoints = GetScreenPoints(CF)
 
 				local Quad = Object.Elements['Quad']
-				Quad.Visible = ScreenPoints.QuadVisible
+				Quad.Visible = ScreenPoints.QuadVisible and Category.Boxes
 
 				if ScreenPoints.QuadVisible then
 					Quad.PointA = Vector2.new(ScreenPoints.TopRight.X, ScreenPoints.TopRight.Y)
@@ -137,10 +141,10 @@ function ESP:CreateCategory(Parent, Properties)
 				end
 
 				local Name = Object.Elements['Name']
-				Name.Visible = ScreenPoints.TargetVisible
+				Name.Visible = ScreenPoints.TargetVisible and Category.Names
 
 				local Distance = Object.Elements['Distance']
-				Distance.Visible = ScreenPoints.TargetVisible
+				Distance.Visible = ScreenPoints.TargetVisible and Category.Distances
 
 				if ScreenPoints.TargetVisible then
 					Name.Position = Vector2.new(ScreenPoints.TargetPos.X, ScreenPoints.TargetPos.Y)
@@ -152,7 +156,7 @@ function ESP:CreateCategory(Parent, Properties)
 				end
 
 				local Tracer = Object.Elements['Tracer']
-				Tracer.Visible = ScreenPoints.TorsoVisible
+				Tracer.Visible = ScreenPoints.TorsoVisible and Category.Tracers
 
 				if ScreenPoints.TorsoVisible then
 					Tracer.From = Vector2.new(ScreenPoints.TorsoPos.X, ScreenPoints.TorsoPos.Y)
@@ -212,8 +216,18 @@ local Category = ESP:CreateCategory(game:GetService("Workspace").NPCS, {
 	Color = Color3.new(255, 0, 0),
 	Distance = 1000,
 	PrimaryPart = 'HumanoidRootPart',
-	Enabled = true
+	Enabled = true,
+	Names = true,
+	Boxes = false,
+	Tracers = false,
+	Distances = false,
 })
+
+UIS.InputBegan:Connect(function(Input)
+	if Input.KeyCode == Enum.KeyCode.Q then
+		Category:Toggle()
+	end
+end)
 
 RunService.RenderStepped:Connect(function()
 	for i, Category in pairs(ESP.Categories) do
@@ -227,5 +241,3 @@ RunService.RenderStepped:Connect(function()
 		end
 	end
 end)
-
-return ESP
