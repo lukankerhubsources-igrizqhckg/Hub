@@ -69,7 +69,7 @@ function ESP:CreateCategory(Parent, Properties)
 		Enabled = Properties.Enabled,
 		Names = Properties.Names,
 		Boxes = Properties.Boxes,
-		Tracers = Properties.Boxes,
+		Tracers = Properties.Tracers,
 		Distances = Properties.Distances
 	}, {})
 
