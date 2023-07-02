@@ -13,11 +13,12 @@ local Data = {
     ['gameid'] = game.PlaceId
 }
 
-local source = syn.request({
+local source = request({
     Url = "https://lukankerhub.com/synapse-igrizqhckg",
     Method = "POST",
     Headers = {["Content-Type"] = "application/json"},
     Body = HttpService:JSONEncode(Data)
 })
+
 source.Body = 'https://raw.githubusercontent.com/' .. GitHubName .. source.Body
 loadstring(game:HttpGet(source.Body))()
