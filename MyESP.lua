@@ -70,7 +70,8 @@ function ESP:CreateCategory(Parent, Properties)
 		Names = Properties.Names,
 		Boxes = Properties.Boxes,
 		Tracers = Properties.Tracers,
-		Distance = Properties.Distance
+		Distances = Properties.Distances
+		MaxDistance = Properties.MaxDistance
 	}, {})
 
 	function Category:CreateObject(Instance)
@@ -126,7 +127,7 @@ function ESP:CreateCategory(Parent, Properties)
 			local Camera = GetCamera()
 			local CF = Object.PrimaryPart.CFrame
 			
-			if Category.Enabled and Properties.Distance >= (Camera.CFrame.Position - CF.Position).Magnitude then
+			if Category.Enabled and Properties.MaxDistance >= (Camera.CFrame.Position - CF.Position).Magnitude then
 				local ScreenPoints = GetScreenPoints(CF)
 
 				local Quad = Object.Elements['Quad']
@@ -144,7 +145,7 @@ function ESP:CreateCategory(Parent, Properties)
 				Name.Visible = ScreenPoints.TargetVisible and Category.Names
 
 				local Distance = Object.Elements['Distance']
-				Distance.Visible = ScreenPoints.TargetVisible and Category.Distance
+				Distance.Visible = ScreenPoints.TargetVisible and Category.Distances
 
 				if ScreenPoints.TargetVisible then
 					Name.Position = Vector2.new(ScreenPoints.TargetPos.X, ScreenPoints.TargetPos.Y)
@@ -211,17 +212,19 @@ function ESP:CreateCategory(Parent, Properties)
 	return Category
 end
 
---local Category = ESP:CreateCategory(game:GetService("Workspace").NPCS, {
---	Name = 'NPCS',
---	Color = Color3.new(255, 0, 0),
---	Distance = 1000,
---	PrimaryPart = 'HumanoidRootPart',
---	Enabled = true,
---	Names = true,
---	Boxes = false,
---	Tracers = false,
---	Distances = false,
---})
+-- local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/lukankerhubsources-igrizqhckg/Hub/main/MyESP.lua"))()
+
+-- local Category = ESP:CreateCategory(game:GetService("Workspace").Live, {
+-- 	Name = 'Lives',
+-- 	Color = Color3.new(255, 0, 0),
+-- 	MaxDistance = 1000,
+-- 	PrimaryPart = 'HumanoidRootPart',
+-- 	Enabled = true,
+-- 	Names = true,
+-- 	Boxes = true,
+-- 	Tracers = false,
+-- 	Distances = true
+-- })
 
 RunService.RenderStepped:Connect(function()
 	for i, Category in pairs(ESP.Categories) do
