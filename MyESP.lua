@@ -144,7 +144,7 @@ function ESP:CreateCategory(Parent, Properties)
 				Name.Visible = ScreenPoints.TargetVisible and Category.Names
 
 				local Distance = Object.Elements['Distance']
-				Distance.Visible = ScreenPoints.TargetVisible and Category.Distances
+				Distance.Visible = ScreenPoints.TargetVisible and Category.Distance
 
 				if ScreenPoints.TargetVisible then
 					Name.Position = Vector2.new(ScreenPoints.TargetPos.X, ScreenPoints.TargetPos.Y)
