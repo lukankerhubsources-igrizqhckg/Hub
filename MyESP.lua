@@ -126,7 +126,7 @@ function ESP:CreateCategory(Parent, Properties)
 			local Camera = GetCamera()
 			local CF = Object.PrimaryPart.CFrame
 			
-			if Category.Enabled and Properties.Distance <= (Camera.CFrame.Position - CF.Position).Magnitude then
+			if Category.Enabled and Properties.Distance >= (Camera.CFrame.Position - CF.Position).Magnitude then
 				local ScreenPoints = GetScreenPoints(CF)
 
 				local Quad = Object.Elements['Quad']
