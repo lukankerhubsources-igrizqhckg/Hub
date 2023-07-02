@@ -70,7 +70,7 @@ function ESP:CreateCategory(Parent, Properties)
 		Names = Properties.Names,
 		Boxes = Properties.Boxes,
 		Tracers = Properties.Tracers,
-		Distances = Properties.Distances
+		Distance = Properties.Distance
 	}, {})
 
 	function Category:CreateObject(Instance)
