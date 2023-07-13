@@ -1,3 +1,5 @@
+-- v1
+
 local ESP = {
 	Enabled = false,
 	BoxShift = CFrame.new(0,-1.5,0),
@@ -70,7 +72,7 @@ function ESP:CreateCategory(Parent, Properties)
 		Names = Properties.Names,
 		Boxes = Properties.Boxes,
 		Tracers = Properties.Tracers,
-		Distances = Properties.Distances
+		Distances = Properties.Distances,
 		MaxDistance = Properties.MaxDistance
 	}, {})
 
@@ -126,7 +128,7 @@ function ESP:CreateCategory(Parent, Properties)
 		function Object:Update()
 			local Camera = GetCamera()
 			local CF = Object.PrimaryPart.CFrame
-			
+
 			if Category.Enabled and Properties.MaxDistance >= (Camera.CFrame.Position - CF.Position).Magnitude then
 				local ScreenPoints = GetScreenPoints(CF)
 
@@ -184,7 +186,7 @@ function ESP:CreateCategory(Parent, Properties)
 				Object:Remove()
 			end
 		end)
-		
+
 		local Humanoid = Object.Instance:FindFirstChildOfClass('Humanoid')
 		if Humanoid then
 			Humanoid.Died:Connect(function()
