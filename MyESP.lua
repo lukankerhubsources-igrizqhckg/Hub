@@ -1,4 +1,4 @@
--- v1.1
+-- v1.2
 
 local ESP = {
 	Enabled = false,
@@ -206,14 +206,14 @@ function ESP:CreateCategory(Parent, Properties)
 
 	Parent.ChildAdded:Connect(function(Child)
 		repeat wait() until Child.Parent and Child
-		
+
 		if Child ~= GetCharacter() then
 			local Object = Category:CreateObject(Child)
 			Object:AddElements()
 		end
 	end)
-
-	ESP.Categories[Properties.Name] = Category
+	
+	--ESP.Categories[Properties.Name] = Category
 
 	return Category
 end
