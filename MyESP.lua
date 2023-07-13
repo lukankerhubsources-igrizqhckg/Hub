@@ -1,4 +1,4 @@
--- v1.2
+-- v1.3
 
 local ESP = {
 	Enabled = false,
@@ -213,7 +213,7 @@ function ESP:CreateCategory(Parent, Properties)
 		end
 	end)
 	
-	--ESP.Categories[Properties.Name] = Category
+	ESP.Categories[Properties.Name] = Category
 
 	return Category
 end
