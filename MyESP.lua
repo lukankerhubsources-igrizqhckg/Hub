@@ -1,4 +1,4 @@
--- v1
+-- v1.1
 
 local ESP = {
 	Enabled = false,
@@ -80,7 +80,7 @@ function ESP:CreateCategory(Parent, Properties)
 		local Object = setmetatable({
 			Instance = Instance,
 			Elements = {},
-			PrimaryPart = Instance:IsA('Model') and Instance:FindFirstChild(Properties.PrimaryPart) or Instance
+			PrimaryPart = Properties.PrimaryPart and Instance:FindFirstChild(Properties.PrimaryPart) or Instance.PrimaryPart
 		}, {})
 
 		function Object:Remove()
@@ -198,15 +198,19 @@ function ESP:CreateCategory(Parent, Properties)
 	end
 
 	for i, Child in pairs(Parent:GetChildren()) do
-		local Object = Category:CreateObject(Child)
-		Object:AddElements()
+		if Child ~= GetCharacter() then
+			local Object = Category:CreateObject(Child)
+			Object:AddElements()
+		end
 	end
 
 	Parent.ChildAdded:Connect(function(Child)
 		repeat wait() until Child.Parent and Child
-
-		local Object = Category:CreateObject(Child)
-		Object:AddElements()
+		
+		if Child ~= GetCharacter() then
+			local Object = Category:CreateObject(Child)
+			Object:AddElements()
+		end
 	end)
 
 	ESP.Categories[Properties.Name] = Category
@@ -217,7 +221,6 @@ end
 -- local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/lukankerhubsources-igrizqhckg/Hub/main/MyESP.lua"))()
 
 -- local Category = ESP:CreateCategory(game:GetService("Workspace").Live, {
--- 	Name = 'Lives',
 -- 	Color = Color3.new(255, 0, 0),
 -- 	MaxDistance = 1000,
 -- 	PrimaryPart = 'HumanoidRootPart',
